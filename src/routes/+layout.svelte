@@ -36,20 +36,38 @@
 	});
 </script>
 
-<div class="headernavbar {expanded ? 'expanded' : ''} {resized ? 'resized' : ''}">
-	<a href="/">
-		<img src="/logo.png" class="navlogo hovershadow" alt="logo" width="50" height="50" />
-	</a>
-	<nav>
-		<a href="/" class="navbutton hovershadow">Home</a>
-		<a href="/about" class="navbutton hovershadow">About</a>
-		<a href="/thisdoesntexist" class="navbutton hovershadow">Super Secret</a>
-	</nav>
+<div class="container">
+	<div class="headernavbar {expanded ? 'expanded' : ''} {resized ? 'resized' : ''}">
+		<a href="/">
+			<img src="/logo.png" class="navlogo hovershadow" alt="logo" width="50" height="50" />
+		</a>
+		<nav>
+			<a href="/" class="navbutton hovershadow">Home</a>
+			<a href="/about" class="navbutton hovershadow">About</a>
+			<a href="/thisdoesntexist" class="navbutton hovershadow">Super Secret</a>
+		</nav>
+	</div>
+
+	<div class="content">
+		{@render children()}
+	</div>
+
+	<div class="footer">
+		<p class="footertext">
+			Made by <a href="https://github.com/johnnyg-git">Joseph Goold (Johnny Johnny)</a>
+		</p>
+	</div>
 </div>
 
-{@render children()}
-
 <style>
+	.container {
+		min-height: 100vh;
+	}
+
+	.content {
+		flex: 1;
+	}
+
 	.headernavbar {
 		box-sizing: border-box;
 		background-color: #282828;
@@ -116,5 +134,18 @@
 
 	.hovershadow:hover {
 		filter: drop-shadow(0 0 0.5rem #7b3866);
+	}
+
+	.footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		padding: 5em 1em 1em 1em;
+	}
+
+	.footertext {
+		color: #7b3866;
+		font-size: 0.8em;
 	}
 </style>

@@ -17,6 +17,12 @@ body {
 	interpolate-size: allow-keywords;
 }
 
+a {
+	color: #8a4d76;
+	text-decoration: none;
+	font-weight: bold;
+}
+
 .content {
 	margin: 5px;
 }
