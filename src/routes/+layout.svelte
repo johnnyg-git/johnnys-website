@@ -30,8 +30,12 @@
 
 <style>
 	.content {
+		flex: 1;
+	}
+
+	.container {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		min-height: 100vh;
 	}
 </style>
