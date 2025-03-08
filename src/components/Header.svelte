@@ -2,21 +2,28 @@
 	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
 
-	let expanded = false;
+	let scrollY = $state(0);
+	let windowWidth = $state(1000);
+	let y = 8;
+
+	let expanded = $derived(scrollY > y || windowWidth < 1000);
 
 	onMount(() => {
-		let resized = false;
-		const headernavbar = document.querySelector('.headernavbar');
-		if (!headernavbar) return;
-		let y = 8;
-		window.addEventListener('scroll', () => {
-			expanded = window.scrollY > y || resized;
-		});
+		const handleScroll = () => {
+			scrollY = window.scrollY;
+		};
 
-		window.addEventListener('resize', () => {
-			resized = window.innerWidth < 1000;
-			expanded = window.scrollY > y || resized;
-		});
+		const handleResize = () => {
+			windowWidth = window.innerWidth;
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('resize', handleResize);
+		};
 	});
 
 	onNavigate((navigation) => {
