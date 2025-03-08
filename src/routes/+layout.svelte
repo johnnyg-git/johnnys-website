@@ -25,3 +25,11 @@
 </div>
 
 <Footer />
+
+<style>
+	.content {
+		margin: 0 auto;
+		max-width: 1000px;
+		padding: 0 1em;
+	}
+</style>

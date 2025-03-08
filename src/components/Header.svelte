@@ -14,7 +14,7 @@
 		});
 
 		window.addEventListener('resize', () => {
-			resized = window.innerWidth < 1000;
+			resized = window.innerWidth < 1100;
 			expanded = window.scrollY > y || resized;
 		});
 	});
@@ -54,14 +54,13 @@
 		position: sticky;
 		top: 8px;
 		margin: 0 auto;
-		max-width: 500px;
+		max-width: 1000px;
 		border-bottom: 3px solid #7b3866;
-		will-change: max-width, border-bottom, margin-top, top;
+		will-change: max-width, border-bottom, top;
 		transition:
 			max-width 0.3s ease,
 			border-bottom 0.3s ease,
-			margin-top 0.3s ease,
-			top 0.3s ease;
+			top 0.1s ease;
 		z-index: 1000;
 		user-select: none;
 	}
