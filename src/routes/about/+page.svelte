@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>About</title>
+</svelte:head>
+
 <div class="content">
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore praesentium qui, similique
