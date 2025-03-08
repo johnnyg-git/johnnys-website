@@ -54,7 +54,8 @@
 
 	<div class="footer">
 		<p class="footertext">
-			Made by <a href="https://github.com/johnnyg-git">Joseph Goold (Johnny Johnny)</a>
+			Made by
+			<a href="https://github.com/johnnyg-git" target="_blank">Joseph Goold (Johnny Johnny)</a>
 		</p>
 	</div>
 </div>
