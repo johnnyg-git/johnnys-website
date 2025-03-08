@@ -9,6 +9,9 @@
 	let expanded = $derived(scrollY > y || windowWidth < 1100);
 
 	onMount(() => {
+		windowWidth = window.innerWidth;
+		scrollY = window.scrollY;
+
 		const handleScroll = () => {
 			scrollY = window.scrollY;
 		};
