@@ -18,24 +18,10 @@
 	});
 </script>
 
-<div class="container">
-	<Header />
+<Header />
 
-	<div class="content">
-		{@render children()}
-	</div>
-
-	<Footer />
+<div class="content">
+	{@render children()}
 </div>
 
-<style>
-	.content {
-		flex: 1;
-	}
-
-	.container {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-</style>
+<Footer />
