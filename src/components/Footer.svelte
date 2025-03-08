@@ -3,7 +3,7 @@
 	import IconMdiEmail from 'virtual:icons/mdi/email';
 </script>
 
-<div class="footer">
+<footer>
 	<p class="footertext">
 		Made by
 		<a href="https://github.com/johnnyg-git" target="_blank" rel="noopener noreferrer">
@@ -18,10 +18,10 @@
 			<IconMdiEmail />
 		</a>
 	</div>
-</div>
+</footer>
 
 <style>
-	.footer {
+	footer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
