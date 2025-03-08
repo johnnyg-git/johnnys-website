@@ -81,6 +81,11 @@
 		top: 0;
 	}
 
+	.headernavbar a {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		touch-action: manipulation;
+	}
+
 	.navlogo {
 		margin-right: 1em;
 		border-radius: 50%;
