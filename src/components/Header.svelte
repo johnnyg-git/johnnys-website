@@ -3,13 +3,12 @@
 	import { onNavigate } from '$app/navigation';
 
 	let expanded = false;
-	let resized = false;
-	let y = 0;
 
 	onMount(() => {
+		let resized = false;
 		const headernavbar = document.querySelector('.headernavbar');
 		if (!headernavbar) return;
-		y = 8;
+		let y = 8;
 		window.addEventListener('scroll', () => {
 			expanded = window.scrollY > y || resized;
 		});
@@ -31,7 +30,7 @@
 	});
 </script>
 
-<div class="headernavbar {expanded ? 'expanded' : ''} {resized ? 'resized' : ''}">
+<div class="headernavbar {expanded ? 'expanded' : ''}">
 	<a href="/">
 		<img src="/logo.png" class="navlogo hovershadow" alt="logo" width="50" height="50" />
 	</a>
@@ -53,15 +52,16 @@
 		justify-content: center;
 		padding: 0.5em 1em;
 		position: sticky;
-		top: 0;
+		top: 8px;
 		margin: 0 auto;
-		margin-top: 8px;
-		max-width: 400px;
+		max-width: 500px;
 		border-bottom: 3px solid #7b3866;
+		will-change: max-width, border-bottom, margin-top, top;
 		transition:
 			max-width 0.3s ease,
 			border-bottom 0.3s ease,
-			margin-top 0.3s ease;
+			margin-top 0.3s ease,
+			top 0.3s ease;
 		z-index: 1000;
 		user-select: none;
 	}
@@ -69,10 +69,7 @@
 	.headernavbar.expanded {
 		max-width: 100%;
 		border-radius: 0;
-	}
-
-	.headernavbar.resized {
-		margin-top: 0;
+		top: 0;
 	}
 
 	.navlogo {
