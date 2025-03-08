@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.css';
+	import { onNavigate } from '$app/navigation';
+
 	let { children } = $props();
 
 	// Create a state for whether the header is expanded or not
@@ -19,6 +21,17 @@
 		window.addEventListener('resize', () => {
 			resized = window.innerWidth < 1000;
 			expanded = window.scrollY > y || resized;
+		});
+	});
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
 		});
 	});
 </script>
