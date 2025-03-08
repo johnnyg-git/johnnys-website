@@ -90,6 +90,7 @@
 			border-bottom 0.3s ease,
 			margin-top 0.3s ease;
 		z-index: 1000;
+		user-select: none;
 	}
 
 	.headernavbar.expanded {
@@ -119,6 +120,7 @@
 		border-radius: 5px;
 		cursor: pointer;
 		padding: 1em 1em;
+		user-select: none;
 
 		will-change: background-color;
 		transition: background-color 0.3s ease;
