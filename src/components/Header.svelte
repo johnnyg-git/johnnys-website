@@ -82,7 +82,6 @@
 	}
 
 	.headernavbar a {
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		touch-action: manipulation;
 	}
 

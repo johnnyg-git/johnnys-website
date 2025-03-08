@@ -4,6 +4,7 @@ html,
 body {
 	height: auto;
 	color: white;
+	accent-color: #7b3866;
 	margin: 0;
 
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -15,6 +16,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	interpolate-size: allow-keywords;
+
+	-webkit-tap-highlight-color: transparent;
 }
 
 body {
