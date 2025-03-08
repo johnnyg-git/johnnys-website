@@ -2,6 +2,9 @@
 	import '../app.css';
 	import { onNavigate } from '$app/navigation';
 
+	import IconMdiGithub from 'virtual:icons/mdi/github';
+	import IconMdiEmail from 'virtual:icons/mdi/email';
+
 	let { children } = $props();
 
 	// Create a state for whether the header is expanded or not
@@ -55,8 +58,20 @@
 	<div class="footer">
 		<p class="footertext">
 			Made by
-			<a href="https://github.com/johnnyg-git" target="_blank">Joseph Goold (Johnny Johnny)</a>
+			<a href="https://github.com/johnnyg-git" target="_blank" rel="noopener noreferrer"
+				>Joseph Goold (Johnny Johnny)</a
+			>
 		</p>
+
+		<div>
+			<a href="https://github.com/johnnyg-git" target="_blank" rel="noopener noreferrer">
+				<IconMdiGithub />
+			</a>
+
+			<a href="mailto:inquiries@johnnygjohnny.co.uk">
+				<IconMdiEmail />
+			</a>
+		</div>
 	</div>
 </div>
 
@@ -138,11 +153,12 @@
 	.hovershadow:hover {
 		filter: drop-shadow(0 0 0.5rem #7b3866);
 	}
-
 	.footer {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		flex-direction: column;
+		gap: 1em; /* Adjust the gap size as needed */
 		background-color: transparent;
 		padding: 5em 1em 1em 1em;
 	}
@@ -150,5 +166,6 @@
 	.footertext {
 		color: #7b3866;
 		font-size: 0.8em;
+		margin: 0;
 	}
 </style>
