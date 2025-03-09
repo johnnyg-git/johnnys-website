@@ -43,7 +43,7 @@
 	<div class="card contact">
 		<h1>Contact</h1>
 		<p>
-			<span><a href="https://github.com/johnny-git"><IconMdiGithub /> johnnyg-git</a></span>
+			<span><a href="https://github.com/johnnyg-git"><IconMdiGithub /> johnnyg-git</a></span>
 			<span>
 				<a href="mailto:inquiries@johnnygjohnny.co.uk">
 					<IconMdiEmail /> inquiries@johnnygjohnny.co.uk
