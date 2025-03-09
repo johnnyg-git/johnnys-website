@@ -32,7 +32,7 @@
 	}
 
 	.footertext {
-		color: #7b3866;
+		color: var(--text-color-less);
 		font-size: 0.8em;
 		margin: 0;
 	}

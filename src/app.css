@@ -1,26 +1,16 @@
-/* https://colorffy.com/dark-theme-generator?colors=7b3866-121212 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-html,
-body {
-	height: auto;
-	color: white;
-	accent-color: #7b3866;
-	margin: 0;
+:root {
+	--bg-color: hsl(0, 0%, 16%);
+	--bg-color-secondary: hsl(0, 0%, 20%);
 
-	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
+	--primary-color: hsl(318, 35%, 35%);
+	--secondary-color: hsl(318, 35%, 30%);
+	--accent-color: hsl(319, 35%, 50%);
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	interpolate-size: allow-keywords;
+	--text-color: hsl(0, 0%, 90%);
+	--text-color-less: hsl(0, 0%, 70%);
 
-	-webkit-tap-highlight-color: transparent;
-}
-
-body {
 	background: rgb(28, 23, 26);
 	background: -moz-linear-gradient(180deg, rgba(28, 23, 26, 1) 0%, rgba(18, 18, 18, 1) 100%);
 	background: -webkit-linear-gradient(180deg, rgba(28, 23, 26, 1) 0%, rgba(18, 18, 18, 1) 100%);
@@ -28,14 +18,28 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1c171a",endColorstr="#121212",GradientType=1);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+
+	box-sizing: border-box;
+	color: var(--text-color);
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+body {
+	margin: 10px;
+	padding: 0;
 }
 
 a {
-	color: #8a4d76;
+	color: var(--primary-color);
 	text-decoration: none;
-	font-weight: bold;
-}
+	font-weight: normal;
 
-.content {
-	margin: 5px;
+	transition: color 0.3s ease;
+	will-change: color;
+
+	&:hover {
+		color: var(--accent-color);
+	}
 }
