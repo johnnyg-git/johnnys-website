@@ -1,8 +1,24 @@
+<script lang="ts">
+	import { inview } from 'svelte-inview';
+	import { fade } from 'svelte/transition';
+
+	let isInView: boolean = false;
+	let isInView2: boolean = false;
+	let isInView3: boolean = false;
+</script>
+
 <svelte:head>
 	<title>About</title>
 </svelte:head>
 
-<div class="container slide-in">
+<div
+	id="aboutSection"
+	class="container {isInView ? 'slideIn' : ''}"
+	use:inview={{}}
+	on:inview_change={(event) => {
+		isInView = true;
+	}}
+>
 	<div class="card about">
 		<h1>About</h1>
 		<p>This is the about page.</p>
@@ -16,7 +32,19 @@
 		<p>This is the about page.</p>
 	</div>
 </div>
-<div class="container">
+
+<div
+	id="contactSection"
+	class="container {isInView2 ? 'slideIn' : ''}"
+	use:inview={{}}
+	on:inview_change={(event) => {
+		isInView2 = event.detail.inView;
+	}}
+>
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
 	<div class="card about">
 		<h1>About</h1>
 		<p>This is the about page.</p>
@@ -26,11 +54,14 @@
 		<p>This is the about page.</p>
 	</div>
 </div>
-<div class="container">
-	<div class="card about">
-		<h1>About</h1>
-		<p>This is the about page.</p>
-	</div>
+
+<div
+	class="container {isInView3 ? 'slideIn' : ''}"
+	use:inview={{}}
+	on:inview_change={(event) => {
+		isInView3 = event.detail.inView;
+	}}
+>
 	<div class="card about">
 		<h1>About</h1>
 		<p>This is the about page.</p>
@@ -51,6 +82,16 @@
 		flex-wrap: wrap;
 		gap: 30px;
 		margin: 30px;
+		opacity: 0;
+		transform: translateY(20px);
+		transition:
+			transform 1s ease,
+			opacity 1s ease;
+	}
+
+	.slideIn {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	.card {

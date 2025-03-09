@@ -26,6 +26,16 @@
 	font-style: normal;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.container {
+		transition: none !important;
+	}
+}
+
 body {
 	margin: 10px;
 	padding: 0;

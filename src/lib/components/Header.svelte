@@ -1,3 +1,12 @@
+<script lang="ts">
+	function scrollToSection(sectionId: string) {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+</script>
+
 <header>
 	<a href="/">
 		<div class="topinfo">
@@ -7,8 +16,8 @@
 		</div>
 	</a>
 	<nav class="navrow">
-		<a href="/">About</a>
-		<a href="/contact">Contact</a>
+		<a href="#" on:click|preventDefault={() => scrollToSection('aboutSection')}>About</a>
+		<a href="#" on:click|preventDefault={() => scrollToSection('contactSection')}>Contact</a>
 	</nav>
 </header>
 <br />
