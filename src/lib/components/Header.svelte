@@ -29,7 +29,6 @@
 		</div>
 	</a>
 	<nav class="navrow">
-		<!-- svelte-ignore a11y_invalid_attribute -->
 		<a
 			href="/"
 			on:click|preventDefault={() => {
@@ -37,7 +36,6 @@
 				else scrollToSection('aboutSection');
 			}}>About</a
 		>
-		<!-- svelte-ignore a11y_invalid_attribute -->
 		<a
 			href="/"
 			on:click|preventDefault={() => {
@@ -45,7 +43,6 @@
 				else scrollToSection('contactSection');
 			}}>Contact</a
 		>
-		<!-- svelte-ignore a11y_invalid_attribute -->
 		<a
 			href="/"
 			on:click|preventDefault={() => {
