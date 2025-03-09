@@ -2,7 +2,43 @@
 	<title>About</title>
 </svelte:head>
 
+<div class="container slide-in">
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+</div>
 <div class="container">
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+</div>
+<div class="container">
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
+	<div class="card about">
+		<h1>About</h1>
+		<p>This is the about page.</p>
+	</div>
 	<div class="card about">
 		<h1>About</h1>
 		<p>This is the about page.</p>
@@ -28,6 +64,10 @@
 		background-color: var(--bg-color);
 		box-shadow: 0 0 10px var(--accent-color);
 		min-width: 250px;
+	}
+
+	.about {
+		min-height: 50vh;
 	}
 
 	.about h1 {
