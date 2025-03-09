@@ -9,6 +9,19 @@
 
 <Header />
 
-{@render children()}
+<div class="container">
+	{@render children()}
+</div>
 
 <Footer />
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		height: 100vh;
+		height: 100vdh;
+	}
+</style>

@@ -7,10 +7,11 @@
 		</div>
 	</a>
 	<nav class="navrow">
-		<a href="/about">About</a>
+		<a href="/">About</a>
 		<a href="/contact">Contact</a>
 	</nav>
 </header>
+<br />
 
 <style>
 	header {
@@ -28,11 +29,11 @@
 		width: fit-content;
 		height: fit-content;
 		gap: 10px;
+		padding: 5px;
 		transition:
 			transform 0.3s ease,
 			background-color 0.3s ease,
-			box-shadow 0.3s ease,
-			padding 0.3s ease;
+			box-shadow 0.3s ease;
 		user-select: none; /* Prevent text selection */
 	}
 
@@ -42,7 +43,7 @@
 		transition:
 			transform 0.3s ease,
 			background-color 0.3s ease,
-			box-shadow 0.3s ease,
+			box-shadow 0.3s ease;
 		user-select: none; /* Prevent text selection */
 	}
 
@@ -51,7 +52,6 @@
 		transform: scale(1.1);
 		background-color: var(--primary-color);
 		box-shadow: 0 0 10px var(--primary-color);
-		padding: 5px;
 	}
 
 	img {
@@ -70,10 +70,6 @@
 	a {
 		text-decoration: none;
 		color: inherit;
-		outline: none; /* Remove focus outline */
-	}
-
-	a:focus {
-		outline: none; /* Remove focus outline */
+		outline: none;
 	}
 </style>

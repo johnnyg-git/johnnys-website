@@ -2,13 +2,14 @@
 
 :root {
 	--bg-color: hsl(0, 0%, 16%);
+	--bg-color-secondary: hsl(0, 0%, 20%);
 
 	--primary-color: hsl(318, 35%, 35%);
 	--secondary-color: hsl(318, 35%, 30%);
 	--accent-color: hsl(319, 35%, 50%);
 
 	--text-color: hsl(0, 0%, 90%);
-	--text-color-less: hsl(0, 0%, 60%);
+	--text-color-less: hsl(0, 0%, 70%);
 
 	background-color: var(--bg-color);
 
@@ -22,4 +23,16 @@
 body {
 	margin: 10px;
 	padding: 0;
+}
+
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+	font-weight: normal;
+
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: var(--accent-color);
+	}
 }
