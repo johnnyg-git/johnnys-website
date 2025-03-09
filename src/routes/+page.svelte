@@ -25,7 +25,7 @@
 		gap: 10px;
 		padding: 20px;
 		border-radius: 5px;
-		background-color: var(--bg-color-secondary);
+		background-color: var(--bg-color);
 		box-shadow: 0 0 10px var(--accent-color);
 		min-width: 250px;
 	}
