@@ -1,23 +1,46 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	function scrollToSection(sectionId: string) {
 		const element = document.getElementById(sectionId);
 		if (element) {
 			element.scrollIntoView({ behavior: 'smooth' });
 		}
 	}
+
+	let width = 0;
+
+	// Set initial width on mount
+	onMount(() => {
+		width = window.innerWidth;
+	});
 </script>
+
+<svelte:window bind:innerWidth={width} />
 
 <header>
 	<a href="/">
 		<div class="topinfo">
 			<img src="/logo.png" height="50px" width="50px" alt="Logo" />
 			<h1>Joseph Goold</h1>
-			<h2>- Johnny Johnny</h2>
+			{#if width > 350}
+				<h2>- Johnny Johnny</h2>
+			{/if}
 		</div>
 	</a>
 	<nav class="navrow">
-		<a href="#" on:click|preventDefault={() => scrollToSection('aboutSection')}>About</a>
-		<a href="#" on:click|preventDefault={() => scrollToSection('contactSection')}>Contact</a>
+		<!-- svelte-ignore a11y_invalid_attribute -->
+		<a href="javascript:void(0)" on:click|preventDefault={() => scrollToSection('aboutSection')}
+			>About</a
+		>
+		<!-- svelte-ignore a11y_invalid_attribute -->
+		<a href="javascript:void(0)" on:click|preventDefault={() => scrollToSection('contactSection')}
+			>Contact</a
+		>
+		<!-- svelte-ignore a11y_invalid_attribute -->
+		<a href="javascript:void(0)" on:click|preventDefault={() => scrollToSection('catSection')}
+			>Cat</a
+		>
 	</nav>
 </header>
 <br />
