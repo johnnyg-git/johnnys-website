@@ -43,9 +43,13 @@
 	<div class="card contact">
 		<h1>Contact</h1>
 		<p>
-			<span><a href="https://github.com/johnnyg-git"><IconMdiGithub /> johnnyg-git</a></span>
+			<span
+				><a href="https://github.com/johnnyg-git" target="_blank" rel="noopener noreferrer"
+					><IconMdiGithub /> johnnyg-git</a
+				></span
+			>
 			<span>
-				<a href="mailto:inquiries@johnnygjohnny.co.uk">
+				<a href="mailto:inquiries@johnnygjohnny.co.uk" target="_blank" rel="noopener noreferrer">
 					<IconMdiEmail /> inquiries@johnnygjohnny.co.uk
 				</a>
 			</span>
