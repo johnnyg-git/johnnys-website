@@ -30,11 +30,29 @@
 	</a>
 	<nav class="navrow">
 		<!-- svelte-ignore a11y_invalid_attribute -->
-		<a href="/" on:click|preventDefault={() => scrollToSection('aboutSection')}>About</a>
+		<a
+			href="/"
+			on:click|preventDefault={() => {
+				if (window.location.pathname !== '/') window.location.href = '/';
+				else scrollToSection('aboutSection');
+			}}>About</a
+		>
 		<!-- svelte-ignore a11y_invalid_attribute -->
-		<a href="/" on:click|preventDefault={() => scrollToSection('contactSection')}>Contact</a>
+		<a
+			href="/"
+			on:click|preventDefault={() => {
+				if (window.location.pathname !== '/') window.location.href = '/';
+				else scrollToSection('contactSection');
+			}}>Contact</a
+		>
 		<!-- svelte-ignore a11y_invalid_attribute -->
-		<a href="/" on:click|preventDefault={() => scrollToSection('catSection')}>Cat</a>
+		<a
+			href="/"
+			on:click|preventDefault={() => {
+				if (window.location.pathname !== '/') window.location.href = '/';
+				else scrollToSection('catSection');
+			}}>Cat</a
+		>
 	</nav>
 </header>
 <br />
