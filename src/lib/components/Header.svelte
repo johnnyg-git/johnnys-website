@@ -6,9 +6,8 @@
 			<h2>- Johnny Johnny</h2>
 		</div>
 	</a>
-	<nav>
+	<nav class="navrow">
 		<a href="/about">About</a>
-		<a href="/projects">Projects</a>
 		<a href="/contact">Contact</a>
 	</nav>
 </header>
@@ -22,7 +21,8 @@
 		width: 100%;
 	}
 
-	.topinfo {
+	.topinfo,
+	.navrow {
 		display: flex;
 		align-items: center;
 		width: fit-content;
@@ -36,7 +36,18 @@
 		user-select: none; /* Prevent text selection */
 	}
 
-	.topinfo:hover {
+	.navrow a {
+		padding: 5px;
+		border-radius: 5px;
+		transition:
+			transform 0.3s ease,
+			background-color 0.3s ease,
+			box-shadow 0.3s ease,
+		user-select: none; /* Prevent text selection */
+	}
+
+	.topinfo:hover,
+	.navrow a:hover {
 		transform: scale(1.1);
 		background-color: var(--primary-color);
 		box-shadow: 0 0 10px var(--primary-color);
