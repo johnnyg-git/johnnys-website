@@ -14,7 +14,6 @@
 	<Logo />
 	<Navigation {navItems} />
 </header>
-<br />
 
 <style>
 	header {
@@ -23,5 +22,6 @@
 		align-items: center;
 		justify-content: center;
 		width: 100%;
+		margin-bottom: 1rem;
 	}
 </style>
