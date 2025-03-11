@@ -7,18 +7,33 @@
 	let { children } = $props();
 </script>
 
-<Header />
+<div class="fadeIn">
+	<Header />
 
-<div class="container">
-	{@render children()}
+	<div class="container">
+		{@render children()}
+	</div>
+
+	<Footer />
 </div>
-
-<Footer />
 
 <style>
 	.container {
 		width: 100%;
 		min-height: 100vh;
 		min-height: 100vdh;
+	}
+
+	.fadeIn {
+		animation: fadeIn 0.3s ease-in;
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 </style>
