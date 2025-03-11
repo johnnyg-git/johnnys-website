@@ -104,12 +104,6 @@
 		line-height: 1.6;
 	}
 
-	@media (max-width: 900px) {
-		.section {
-			max-width: 90%;
-		}
-	}
-
 	.contactContent {
 		display: flex;
 		flex-direction: column;
@@ -148,5 +142,15 @@
 		width: 100%;
 		max-width: 400px;
 		border-radius: 12px;
+	}
+
+	@media (max-width: 900px) {
+		.section {
+			max-width: 90%;
+		}
+
+		#catSection {
+			width: 100%;
+		}
 	}
 </style>
