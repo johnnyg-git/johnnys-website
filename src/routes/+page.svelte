@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-	<title>Johnny's Website</title>
+	<title>Johnny's Website - Home</title>
 </svelte:head>
 
 <div class="content">
