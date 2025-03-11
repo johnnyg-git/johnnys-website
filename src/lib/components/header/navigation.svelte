@@ -1,34 +1,33 @@
-<script lang="ts">
+<script context="module" lang="ts">
+	export interface NavItem {
+		text: string;
+		sectionId: string;
+	}
+
 	function scrollToSection(sectionId: string) {
 		document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
 	}
+
+	function handleNavClick(event: MouseEvent, sectionId: string) {
+		event.preventDefault();
+		if (window.location.pathname !== '/') {
+			window.location.href = '/';
+		} else {
+			scrollToSection(sectionId);
+		}
+	}
+</script>
+
+<script lang="ts">
+	export let navItems: NavItem[] = [];
 </script>
 
 <nav class="navrow">
-	<a
-		href="/"
-		onclick={(event) => {
-			event.preventDefault();
-			if (window.location.pathname !== '/') window.location.href = '/';
-			else scrollToSection('aboutSection');
-		}}>About</a
-	>
-	<a
-		href="/"
-		onclick={(event) => {
-			event.preventDefault();
-			if (window.location.pathname !== '/') window.location.href = '/';
-			else scrollToSection('contactSection');
-		}}>Contact</a
-	>
-	<a
-		href="/"
-		onclick={(event) => {
-			event.preventDefault();
-			if (window.location.pathname !== '/') window.location.href = '/';
-			else scrollToSection('catSection');
-		}}>Cat</a
-	>
+	{#each navItems as item}
+		<a href="/" on:click={(event) => handleNavClick(event, item.sectionId)}>
+			{item.text}
+		</a>
+	{/each}
 </nav>
 
 <style>

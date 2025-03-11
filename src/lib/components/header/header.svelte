@@ -1,12 +1,18 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Logo from './logo.svelte';
 	import Navigation from './navigation.svelte';
+	import type { NavItem } from './navigation.svelte';
+
+	const navItems: NavItem[] = [
+		{ text: 'About', sectionId: 'aboutSection' },
+		{ text: 'Contact', sectionId: 'contactSection' },
+		{ text: 'Cat', sectionId: 'catSection' }
+	];
 </script>
 
 <header>
 	<Logo />
-	<Navigation />
+	<Navigation {navItems} />
 </header>
 <br />
 
