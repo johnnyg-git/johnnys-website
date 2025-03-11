@@ -7,21 +7,24 @@
 <nav class="navrow">
 	<a
 		href="/"
-		on:click|preventDefault={() => {
+		onclick={(event) => {
+			event.preventDefault();
 			if (window.location.pathname !== '/') window.location.href = '/';
 			else scrollToSection('aboutSection');
 		}}>About</a
 	>
 	<a
 		href="/"
-		on:click|preventDefault={() => {
+		onclick={(event) => {
+			event.preventDefault();
 			if (window.location.pathname !== '/') window.location.href = '/';
 			else scrollToSection('contactSection');
 		}}>Contact</a
 	>
 	<a
 		href="/"
-		on:click|preventDefault={() => {
+		onclick={(event) => {
+			event.preventDefault();
 			if (window.location.pathname !== '/') window.location.href = '/';
 			else scrollToSection('catSection');
 		}}>Cat</a
