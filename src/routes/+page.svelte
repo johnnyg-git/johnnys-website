@@ -68,6 +68,7 @@
 		border-radius: 12px;
 		background-color: var(--bg-color-secondary);
 		box-shadow: 0 4px 20px var(--accent-color);
+		will-change: transform, box-shadow;
 		transition:
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
