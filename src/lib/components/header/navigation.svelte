@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	export interface NavItem {
 		text: string;
 		sectionId: string;
@@ -19,12 +19,18 @@
 </script>
 
 <script lang="ts">
-	export let navItems: NavItem[] = [];
+	let { navItems }: { navItems: NavItem[] } = $props();
 </script>
 
 <nav class="navrow">
 	{#each navItems as item}
-		<a href="/" on:click={(event) => handleNavClick(event, item.sectionId)}>
+		<a
+			href="/"
+			onclick={(event) => {
+				event.preventDefault();
+				handleNavClick(event, item.sectionId);
+			}}
+		>
 			{item.text}
 		</a>
 	{/each}
