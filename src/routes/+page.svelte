@@ -33,15 +33,6 @@
 		margin: 20px 0;
 		padding: 20px;
 		border-radius: 8px;
-	}
-
-	#aboutSection {
-		background-color: var(--bg-color-secondary);
-	}
-	#contactSection {
-		background-color: var(--bg-color-secondary);
-	}
-	#catSection {
 		background-color: var(--bg-color-secondary);
 	}
 </style>
