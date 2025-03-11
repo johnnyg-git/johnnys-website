@@ -1,147 +1,152 @@
 <script lang="ts">
-	import { inview } from 'svelte-inview';
-	import { fade } from 'svelte/transition';
-
 	import IconMdiGithub from 'virtual:icons/mdi/github';
 	import IconMdiEmail from 'virtual:icons/mdi/email';
 	import IconMdiDiscord from 'virtual:icons/mdi/discord';
-
-	let isInView: boolean = false;
-	let isInView2: boolean = false;
-	let isInView3: boolean = false;
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>Johnny's Website - Home</title>
 </svelte:head>
 
-<div
-	id="aboutSection"
-	class="container {isInView ? 'slideIn' : ''}"
-	use:inview={{}}
-	on:inview_change={(event) => {
-		isInView = event.detail.inView;
-	}}
->
-	<div class="card about main">
-		<h1>About</h1>
-		<p>
-			This website is going to be the personal website of Johnny Johnny.<br /><br />
-			It is currently under construction, but maybe one day it will be finished! (I doubt it)
-		</p>
-	</div>
-</div>
-
-<div
-	id="contactSection"
-	class="container {isInView2 ? 'slideIn' : ''}"
-	use:inview={{}}
-	on:inview_change={(event) => {
-		isInView2 = event.detail.inView;
-	}}
->
-	<div class="card contact">
-		<h1>Contact</h1>
-		<p>
-			<span
-				><a href="https://github.com/johnnyg-git" target="_blank" rel="noopener noreferrer"
-					><IconMdiGithub /> johnnyg-git</a
-				></span
+<div class="content">
+	<div id="aboutSection" class="section">
+		<div class="sectionContent">
+			<h2>About</h2>
+			<p>Welcome! This website is currently under construction!</p>
+			<a
+				href="https://github.com/johnnyg-git/johnnys-website"
+				target="_blank"
+				rel="noopener noreferrer">This website is on GitHub!</a
 			>
-			<span>
-				<a href="mailto:inquiries@johnnygjohnny.co.uk" target="_blank" rel="noopener noreferrer">
-					<IconMdiEmail /> inquiries@johnnygjohnny.co.uk
-				</a>
-			</span>
-			<span><IconMdiDiscord /> johnnyjohnny_</span>
-		</p>
+		</div>
 	</div>
-</div>
 
-<div
-	id="catSection"
-	class="container {isInView3 ? 'slideIn' : ''}"
-	use:inview={{}}
-	on:inview_change={(event) => {
-		isInView3 = event.detail.inView;
-	}}
->
-	<div class="card cat">
-		<h1>Here's a cat</h1>
-		<img src="https://cataas.com/cat" alt="Cat" />
+	<div id="contactSection" class="section">
+		<div class="sectionContent contactContent">
+			<h2>Contact</h2>
+			<a
+				href="https://github.com/johnnyg-git"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="contactSocial"
+			>
+				<IconMdiGithub /> GitHub - johnnyg-git
+			</a>
+			<a href="mailto:inquiries@johnnygjohnny.co.uk" class="contactSocial">
+				<IconMdiEmail /> Email - inquiries@johnnygjohnny.co.uk
+			</a>
+			<p class="contactSocial">
+				<IconMdiDiscord /> Discord - johnnyjohnny_
+			</p>
+		</div>
+	</div>
+
+	<div id="catSection" class="section">
+		<div class="sectionContent">
+			<h2>Thanks for visiting! Here's a cat</h2>
+			<div class="catContainer">
+				<img class="catPicture" src="https://cataas.com/cat" alt="Cat" />
+			</div>
+		</div>
 	</div>
 </div>
 
 <style>
-	.container {
-		display: flex;
-		gap: 30px;
-		margin: 30px;
-		opacity: 0;
-		transform: translateY(20px);
-		transition:
-			transform 1s ease,
-			opacity 1s ease;
-		will-change: transform, opacity;
-	}
-
-	.slideIn {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	.card {
+	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 10px;
-		padding: 20px;
-		border-radius: 5px;
-		background-color: var(--bg-color);
-		box-shadow: 0 0 10px var(--accent-color);
-		flex: 1 1 400px;
-		min-width: 100px;
-	}
-
-	.about h1,
-	.contact h1,
-	.cat h1 {
-		font-size: 24px;
-	}
-
-	.contact p {
-		font-size: 18px;
-		color: var(--text-color-less);
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 5px;
-	}
-
-	.contact p span {
-		display: flex;
-		align-items: center;
-	}
-
-	.contact p span a {
-		display: flex;
-		align-items: center;
-	}
-
-	.about p {
-		font-size: 18px;
-		color: var(--text-color-less);
-	}
-
-	.cat img {
 		width: 100%;
-		height: auto;
-		object-fit: cover;
-		border-radius: 5px;
+		gap: 3rem;
+		padding: 2rem 0;
+	}
+
+	.section {
+		width: 100%;
+		max-width: 800px;
+		padding: 2rem;
+		border-radius: 12px;
+		background-color: var(--bg-color-secondary);
+		box-shadow: 0 4px 20px var(--accent-color);
+		will-change: transform, box-shadow;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+	}
+
+	.section:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 6px 25px var(--accent-color);
+	}
+
+	.sectionContent {
+		padding: 1rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		position: relative;
+	}
+
+	h2::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 60px;
+		height: 3px;
+		background-color: var(--accent-color);
 	}
 
 	p {
-		text-align: center;
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 900px) {
+		.section {
+			max-width: 90%;
+		}
+	}
+
+	.contactContent {
+		display: flex;
+		flex-direction: column;
+	}
+
+	a {
+		color: var(--accent-color);
+		text-decoration: none;
+		font-weight: normal;
+		transition: color 0.3s ease;
+		will-change: color;
+
+		&:hover {
+			color: var(--accent-color-brighter);
+		}
+	}
+
+	.contactSocial {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 1rem;
+		margin-top: 0;
+	}
+
+	#catSection {
+		width: fit-content;
+	}
+
+	.catContainer {
+		display: flex;
+		justify-content: center;
+	}
+
+	.catPicture {
+		width: 100%;
+		max-width: 400px;
+		border-radius: 12px;
 	}
 </style>

@@ -24,16 +24,12 @@
 	}
 
 	.card {
-		flex: 1 1 250px;
+		flex: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 10px;
 		padding: 20px;
-		border-radius: 5px;
-		background-color: var(--bg-color);
-		box-shadow: 0 0 10px var(--accent-color);
-		min-width: 250px;
 	}
 
 	.about h1 {
