@@ -13,6 +13,11 @@
 		<div class="sectionContent">
 			<h2>About</h2>
 			<p>Welcome! This website is currently under construction!</p>
+			<a
+				href="https://github.com/johnnyg-git/johnnys-website"
+				target="_blank"
+				rel="noopener noreferrer">This website is on GitHub!</a
+			>
 		</div>
 	</div>
 
@@ -38,7 +43,7 @@
 
 	<div id="catSection" class="section">
 		<div class="sectionContent">
-			<h2>Here's a cat for visiting!</h2>
+			<h2>Thanks for visiting! Here's a cat</h2>
 			<div class="catContainer">
 				<img class="catPicture" src="https://cataas.com/cat" alt="Cat" />
 			</div>
@@ -109,16 +114,16 @@
 		flex-direction: column;
 	}
 
-	a.contactSocial {
+	a {
 		color: var(--accent-color);
 		text-decoration: none;
 		font-weight: normal;
 		transition: color 0.3s ease;
 		will-change: color;
-	}
 
-	a.contactSocial:hover {
-		color: var(--accent-color-brighter);
+		&:hover {
+			color: var(--accent-color-brighter);
+		}
 	}
 
 	.contactSocial {
