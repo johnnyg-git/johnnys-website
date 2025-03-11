@@ -146,7 +146,7 @@
 
 	@media (max-width: 900px) {
 		.section {
-			max-width: 90%;
+			max-width: 80%;
 		}
 
 		#catSection {
