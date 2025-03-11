@@ -7,6 +7,7 @@
 	--primary-color: hsl(318, 35%, 35%);
 	--secondary-color: hsl(318, 35%, 30%);
 	--accent-color: hsl(319, 35%, 50%);
+	--accent-color-brighter: hsl(319, 35%, 60%);
 
 	--text-color: hsl(0, 0%, 90%);
 	--text-color-less: hsl(0, 0%, 70%);
