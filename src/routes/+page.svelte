@@ -43,9 +43,10 @@
 
 	<div id="catSection" class="section">
 		<div class="sectionContent">
-			<h2>Thanks for visiting! Here's a cat</h2>
+			<h2>Thanks for visiting! Here's some cats!</h2>
 			<div class="catContainer">
-				<img class="catPicture" src="https://cataas.com/cat" alt="Cat" />
+				<img class="catPicture" src="https://cataas.com/cat?random=1" alt="Cat 1" />
+				<img class="catPicture" src="https://cataas.com/cat?random=2" alt="Cat 2" />
 			</div>
 		</div>
 	</div>
@@ -129,19 +130,18 @@
 		margin-top: 0;
 	}
 
-	#catSection {
-		width: fit-content;
-	}
-
 	.catContainer {
 		display: flex;
 		justify-content: center;
+		gap: 1rem;
 	}
 
 	.catPicture {
 		width: 100%;
 		max-width: 400px;
 		border-radius: 12px;
+		object-fit: cover;
+		object-position: center;
 	}
 
 	@media (max-width: 900px) {
@@ -151,6 +151,15 @@
 
 		#catSection {
 			width: 100%;
+		}
+
+		.catContainer {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.catPicture {
+			max-width: 100%; /* Ensure images don't exceed container width */
 		}
 	}
 </style>
