@@ -1,7 +1,39 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	import IconMdiGithub from 'virtual:icons/mdi/github';
 	import IconMdiEmail from 'virtual:icons/mdi/email';
 	import IconMdiDiscord from 'virtual:icons/mdi/discord';
+
+	let messages: { username: string; content: string }[] = $state([]);
+
+	export async function getMessages(): Promise<{ username: string; content: string }[] | null> {
+		try {
+			const response = await fetch('/api/getmessages');
+
+			if (!response.ok) {
+				console.error('Failed to fetch messages:', response.statusText);
+				return null;
+			}
+
+			const data = await response.json();
+			return data.messages as { username: string; content: string }[];
+		} catch (error) {
+			console.error('Error fetching messages:', error);
+			return null;
+		}
+	}
+
+	async function updateMessages() {
+		const fetchedMessages = await getMessages();
+		if (fetchedMessages) {
+			messages = fetchedMessages;
+		}
+	}
+
+	onMount(async () => {
+		await updateMessages();
+	});
 </script>
 
 <svelte:head>
@@ -41,6 +73,20 @@
 		</div>
 	</div>
 
+	<div id="messageSection" class="section">
+		<div class="sectionContent">
+			<h2>Message Board</h2>
+			{#if messages.length === 0}
+				<p>No messages to display.</p>
+			{:else}
+				<ul>
+					{#each messages as message}
+						<li><strong>{message.username}:</strong> {message.content}</li>
+					{/each}
+				</ul>
+			{/if}
+		</div>
+	</div>
 	<div id="catSection" class="section">
 		<div class="sectionContent">
 			<h2>Thanks for visiting! Here's some cats!</h2>
