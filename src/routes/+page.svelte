@@ -5,7 +5,41 @@
 	import IconMdiEmail from 'virtual:icons/mdi/email';
 	import IconMdiDiscord from 'virtual:icons/mdi/discord';
 
+	interface SendMessageResponse {
+		success: boolean;
+		received?: { username: string; content: string };
+		error?: string;
+	}
+
 	let messages: { username: string; content: string }[] = $state([]);
+	let username = $state('');
+	let messageContent = $state('');
+	let errorResponse = $state('');
+
+	async function sendMessage(username: string, content: string): Promise<SendMessageResponse> {
+		try {
+			const response = await fetch('/api/addmessage', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ username, content })
+			});
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				return { success: false, error: data.error || 'Error sending message.' };
+			}
+
+			await updateMessages();
+
+			return data;
+		} catch (err: any) {
+			console.error('Error sending message:', err);
+			return { success: false, error: err.message || 'Error sending message.' };
+		}
+	}
 
 	async function getMessages(): Promise<{ username: string; content: string }[] | null> {
 		try {
@@ -84,6 +118,27 @@
 						<li><strong>{message.username}:</strong> {message.content}</li>
 					{/each}
 				</ul>
+			{/if}
+
+			<h3>Send a Message</h3>
+			<input type="text" placeholder="Username" bind:value={username} maxlength="20" />
+			<input type="text" placeholder="Your Message" bind:value={messageContent} maxlength="40" />
+			<button
+				onclick={(event) => {
+					event.preventDefault();
+					sendMessage(username, messageContent).then((response) => {
+						if (response.success) {
+							username = '';
+							messageContent = '';
+							errorResponse = '';
+						} else {
+							errorResponse = response.error || 'Error sending message.';
+						}
+					});
+				}}>Send</button
+			>
+			{#if errorResponse}
+				<p style="color: red;">{errorResponse}</p>
 			{/if}
 		</div>
 	</div>
