@@ -7,7 +7,7 @@
 
 	let messages: { username: string; content: string }[] = $state([]);
 
-	export async function getMessages(): Promise<{ username: string; content: string }[] | null> {
+	async function getMessages(): Promise<{ username: string; content: string }[] | null> {
 		try {
 			const response = await fetch('/api/getmessages');
 
