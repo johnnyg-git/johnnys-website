@@ -17,10 +17,23 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// Set the db as our events.db variable
 		event.locals.db = db;
 
-		// Create the table and WAIT for it to complete before proceeding
+		// Create the users table and WAIT for it to complete before proceeding
 		await new Promise<void>((resolve, reject) => {
 			const query =
 				'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT)';
+			db.run(query, (err) => {
+				if (err) {
+					reject(err);
+					return;
+				}
+				resolve();
+			});
+		});
+
+		// Create the messages table and WAIT for it to complete before proceeding
+		await new Promise<void>((resolve, reject) => {
+			const query =
+				'CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER UNIQUE, content TEXT, FOREIGN KEY (user_id) REFERENCES users (id))';
 			db.run(query, (err) => {
 				if (err) {
 					reject(err);
