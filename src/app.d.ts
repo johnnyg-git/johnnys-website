@@ -1,4 +1,4 @@
-import { Database } from 'sqlite3';
+import sqlite3 from 'sqlite3';
 import 'unplugin-icons/types/svelte';
 
 // See https://svelte.dev/docs/kit/types#app.d.ts
@@ -7,7 +7,7 @@ declare global {
 	namespace App {
 		// interface Error {}
 		interface Locals {
-			db: Database;
+			db: sqlite3.Database;
 		}
 		// interface PageData {}
 		// interface PageState {}
